@@ -1,0 +1,335 @@
+.navbarContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accountCart {
+  display: flex;
+  align-items: center;
+}
+
+.searchForm {
+  position: relative;
+
+  .inputForm {
+    border-color: transparent;
+    font-size: .9rem;
+    text-transform: capitalize;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem .25rem 0;
+    outline: none;
+
+    &:focus {
+      border-bottom: 1px solid var(--primaryHover);
+    }
+  }
+
+  .iconForm {
+    cursor: pointer;
+    color: #617d98;
+
+    &:hover {
+      color: var(--primaryHover);
+    }
+  }
+}
+
+.account {
+  position: relative;
+  margin-right: 4rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover .accContainer {
+    display: block;
+  }
+
+  .accLink {
+
+    &:hover .accIcon,
+    &:hover .accTitle {
+      color: var(--primaryHover);
+    }
+
+    .accIcon {
+      margin-right: .5rem;
+      font-size: 1rem;
+    }
+
+    .accTitle {
+      text-transform: capitalize;
+      color: var(--primaryColor);
+      font-weight: 700;
+    }
+  }
+
+
+
+  .accContainer {
+    position: absolute;
+    right: -1rem;
+    top: 2rem;
+    width: 250px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 3px;
+    background-color: #fff;
+    transition: all .3s linear;
+    animation:  cartOpacity .5s linear;
+    z-index: 100;
+    display: none;
+
+    &::before {
+      position: absolute;
+      top: -1rem;
+      content: "";
+      width: 250px;
+      height: 50px;
+      background-color: transparent;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      border: 0.75rem solid;
+      border-color: transparent transparent var(--primaryColor) transparent;
+      top: -1.5rem;
+      right: 1rem;
+      z-index: 1;
+    }
+
+    .accSetting,
+    .accItem {
+      text-align: right;
+      color: #4e748b;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
+    .accSetting {
+      padding: 1rem 1rem 1.5rem 0;
+      margin: 0;
+      cursor: text;
+    }
+
+    .accList {
+      width: 90%;
+      float: right;
+
+      .accItem {
+        padding: .45rem 1rem .45rem 2rem;
+        border-top: 1px solid #ccc;
+        font-size: .9rem;
+        cursor: pointer;
+
+        &:hover {
+          color: var(--primaryHover);
+        }
+      }
+    }
+  }
+}
+
+.shop {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  .cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: all 1s linear;
+
+    &:hover .cartIcon,
+    &:hover .cartName {
+      color: var(--primaryHover);
+    }
+
+    &:hover .shopCart {
+      display: block;
+    }
+
+    .cartName {
+      margin-left: .25rem;
+      text-transform: capitalize;
+      font-weight: 700;
+      color: var(--primaryColor);
+
+    }
+
+    .shopCart {
+      position: absolute;
+      top: 2rem;
+      right: 0;
+      width: 25rem;
+      padding: .5rem 0;
+      text-align: center;
+      background-color: #f2f2f2;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+      background-color: #fff;
+      border-radius: .25rem;
+      transition: all 1s linear;
+      animation: cartOpacity linear .5s;
+      cursor: default;
+      z-index: 100;
+      display: none;
+
+      &::before {
+        position: absolute;
+        content: "";
+        border: 0.75rem solid;
+        border-color: transparent transparent var(--primaryColor) transparent;
+        top: -1.5rem;
+        right: 0.5rem;
+        z-index: 1;
+      }
+
+      .cartHeading {
+        font-size: .9rem;
+        text-align: left;
+        margin-left: .5rem;
+        margin-top: .5rem;
+        color: #ccc;
+        font-weight: 400;
+      }
+
+      .cartList {
+        width: 100%;
+        max-height: 20rem;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+          width: .5rem;
+          height: 2rem;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: #ccc;
+          border-radius: .5rem;
+        }
+
+        &::-webkit-scrollbar-track {
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset #f2f2f2;
+          border-radius: .5rem;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background: var(--primaryHover);
+        }
+
+        .cartItem {
+          display: grid;
+          grid-template-columns: 2fr 7fr 3fr;
+          height: 3rem;
+          margin: 1rem .5rem;
+          cursor: text;
+          overflow: hidden;
+
+          &:hover {
+            background-color: #ccc;
+          }
+
+          &:first-child {
+            margin-top: .5rem;
+          }
+
+          .itemImg {
+            width: 80%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          .itemDes {
+            text-align: left;
+            height: 1.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            color: var(--primaryColor);
+            overflow: hidden;
+          }
+
+          .itemPrice {
+            color: var(--primaryHover);
+            font-weight: 700;
+            text-align: right;
+          }
+        }
+      }
+
+      .cartDes {
+        color: var(--primaryColor);
+        text-transform: capitalize;
+        font-weight: 700;
+        cursor: default;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 6rem;
+        height: 2rem;
+        background-color: transparent;
+        top: -1rem;
+        right: 2rem;
+        z-index: 1;
+      }
+
+      .cartBtn {
+        outline: none;
+        border-color: transparent;
+        text-transform: uppercase;
+        color: var(--primaryColor);
+        font-weight: 700;
+        background-color: #ccc;
+        cursor: pointer;
+        border-radius: .25rem;
+        transition: all .2s linear;
+
+        &:hover {
+          background-color: var(--primaryHover);
+          color: #fff;
+        }
+
+        .cartBtnLink {
+          display: block;
+          padding: .65rem 1.15rem;
+          color: var(--primaryColor);
+          transition: all .2s linear;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .cartAmount {
+    padding: .35rem .35rem;
+    background: #000;
+    border-radius: 50%;
+    color: #fff;
+    margin-left: .5rem;
+    font-weight: 700;
+  }
+}
+
+
+@keyframes cartOpacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,91 @@
+
+.heading{
+  width: 100%;
+  margin: 2rem auto 0;
+  text-align: center;
+  background-color: #64656a;
+  color: #fff;
+  .title{
+    font-size: 2.5rem;
+    padding: 1.5rem 0 1rem;
+    margin: 0;
+    &::after{
+      /* background-image: url("/public/footer/persuado.png");
+      content: ""; 
+      content: url("/public/footer/persuado.png");
+      position: absolute;*/
+    }
+  }
+  .paragh{
+    font-size: .75rem;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.15rem;
+    margin-bottom: 1rem;
+  }
+  .form{
+    padding-bottom: 2rem;
+    .email{
+      width: 20rem;
+      outline: none;
+      padding: .75rem 1.25rem .75rem .5rem;
+      border-radius: 0.25rem;
+      border-color: transparent;
+      letter-spacing: .1rem;
+      background-color: #f2f2f2;
+      vertical-align: middle;
+    }
+    .submit{
+      outline: none;
+      width: 5rem;
+      padding: .75rem 0;
+      border-radius: 0.25rem;
+      border-color: transparent;
+      text-transform: uppercase;
+      color: var(--primaryColor);
+      vertical-align: middle;
+      margin-left: .25rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .5s linear;
+      &:hover{
+        background-color: var(--primaryBackgound);
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+.footer{
+  background-color: #64656a;
+  .footerLists{
+    padding: 2.5rem 0 5rem;
+    border-top: 1px solid #243a52;
+    .footerItems{
+      border-left: 1px solid #243a52;
+      padding-left: 2rem;
+      &:first-child{
+        border-left: none;
+      }
+      .footerTitle{
+        font-size: 1.2rem;
+        text-transform: uppercase;
+      }
+      .footerList{
+        .footerItem{
+          color: #243a52;
+          margin: 0.5rem 0;
+          text-transform: capitalize;
+          cursor: pointer;
+          font-size: .85rem;
+          font-weight: 600;
+          &:hover{
+            color: var(--primaryHover);
+          }
+        }
+      }
+      
+    }
+  }
+}
